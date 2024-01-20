@@ -22,7 +22,7 @@ RUN sudo apt install libpistache-dev -y
 WORKDIR /app
 
 # Copy the source code into the container
-COPY main.cpp .
+COPY src/ ./src/
 COPY CMakeLists.txt .
 RUN cmake .
 RUN cmake --build .
