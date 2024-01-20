@@ -16,14 +16,15 @@ RUN apt install libbrotli-dev
 
 RUN sudo apt update
 RUN sudo apt install libpistache-dev -y
-
+RUN sudo apt install libcurl4-openssl-dev -y
+RUN apt-get install -y wget
 
 
 WORKDIR /app
 
 # Copy the source code into the container
-COPY src/ ./src/
 COPY CMakeLists.txt .
+COPY src/ ./src/
 RUN cmake .
 RUN cmake --build .
 
