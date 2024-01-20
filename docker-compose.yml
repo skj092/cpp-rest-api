@@ -1,0 +1,11 @@
+version: '3'
+services:
+  myapp:
+    build:
+      context: .  # Use the current directory as the build context
+      dockerfile: Dockerfile  # Specify the name of your Dockerfile
+    working_dir: /app  # Set the working directory inside the container
+    image: restapic
+    ports:
+      - "9080:9080"  # Map port 80 inside the container to port 8080 on the host
+
